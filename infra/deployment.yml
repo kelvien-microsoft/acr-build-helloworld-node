@@ -18,4 +18,4 @@ spec:
         - image: khidayatacr202512.azurecr.io/hello-world:latest
           name: helloworld-node
           ports:
-            - containerPort: 80
+            - containerPort: 8080
