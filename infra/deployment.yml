@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-node
+  namespace: helloworld-node
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: helloworld-node
+  template:
+    metadata:
+      labels:
+        app: helloworld-node
+    spec:
+      containers:
+        - image: khidayatacr202512.azurecr.io/hello-world:latest
+          name: helloworld-node
+          ports:
+            - containerPort: 8080
